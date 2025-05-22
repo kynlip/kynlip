@@ -1,0 +1,173 @@
+
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPhim |  Phim Tổng Hợp |  Miễn Phí |  Phụ Đề |  Thuyết Minh</title>
+    <link rel="icon" type="image/png" href="/KPhim1.png"> <!-- Thêm favicon -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('/banner.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, #000 100%);
+            /* Gradient mờ dần tới đen */
+            z-index: 1;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            /* Lớp phủ bổ sung để tăng độ mờ */
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 30px;
+            position: relative;
+            z-index: 2;
+            /* Nằm trên các lớp phủ */
+            background-color: #000000;
+            /* Màu ô bao quanh giống RoPhim */
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            max-width: 300px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .slogan {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0;
+            line-height: 1.4;
+        }
+
+        .watch-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #f28c38;
+            /* Màu cam */
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        .watch-button:hover {
+            background-color: #f7b731;
+            /* Chuyển sang cam nhạt */
+        }
+
+        .description-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: transparent;
+            /* Nền trong suốt để hòa với lớp phủ #000 */
+            z-index: 2;
+            /* Nằm trên các lớp phủ */
+            position: relative;
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ddd;
+            margin: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                margin-left: 3%;
+                /* Lề trái 3% trên mobile và tablet */
+                margin-right: 3%;
+                /* Lề phải 3% trên mobile và tablet */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .logo {
+                max-width: 200px;
+            }
+
+            .slogan {
+                font-size: 20px;
+            }
+
+            .watch-button {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+
+            .description-container {
+                padding: 15px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="https://kphim.fun/home">
+            <img src="/kphimlogo.png" alt="KPhim Logo" class="logo">
+        </a>
+        <p class="slogan">Xem Phim Miễn Phí, Phim Tổng Hợp Cực Nhanh, Chất Lượng Cao Và Cập Nhật Liên Tục</p>
+        <a href="https://kphim.fun/home" class="watch-button">Xem Phim</a>
+    </div>
+    <div class="description-container">
+        <p class="description">
+            Trong kỷ nguyên số ngày nay, việc xem phim miễn phí trực tuyến đã trở thành nhu cầu giải trí không thể
+            thiếu. Với sự bùng nổ của các nền tảng phát trực tuyến phim, KPhim nổi bật lên như một trang web xem phim
+            miễn phí uy tín, mang đến cho khán giả hàng loạt tác phẩm điện ảnh chất lượng cao từ mọi thể loại. Hãy cùng
+            khám phá những điểm độc đáo khiến KPhim trở thành lựa chọn hàng đầu cho những ai yêu thích phim online!
+        </p>
+    </div>
+</body>
+
+</html>
