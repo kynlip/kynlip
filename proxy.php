@@ -88,8 +88,11 @@ foreach ($lines as $line) {
 // 4. Rewrite .ts về proxy
 $parsed = parse_url($url);
 $tsBase = dirname($parsed['scheme'] . '://' . $parsed['host'] . $parsed['path']);
+
+// ✅ Sửa lỗi //proxy.php (nếu deploy ở thư mục gốc)
+$dir = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
 $self = ($_SERVER['HTTPS'] ?? 'off') !== 'off' ? 'https' : 'http';
-$self .= '://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/proxy.php';
+$self .= '://' . $_SERVER['HTTP_HOST'] . ($dir ? $dir : '') . '/proxy.php';
 
 foreach ($filtered as &$line) {
     if (preg_match('/\.ts$/', $line)) {
