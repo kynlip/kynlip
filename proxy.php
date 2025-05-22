@@ -89,7 +89,7 @@ foreach ($lines as $line) {
 $parsed = parse_url($url);
 $tsBase = dirname($parsed['scheme'] . '://' . $parsed['host'] . $parsed['path']);
 $self = ($_SERVER['HTTPS'] ?? 'off') !== 'off' ? 'https' : 'http';
-$self .= '://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/proxy.php';
+$self .= '://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . 'proxy.php';
 
 foreach ($filtered as &$line) {
     if (preg_match('/\.ts$/', $line)) {
