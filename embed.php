@@ -68,7 +68,7 @@ $proxy = '/proxy.php?url=' . urlencode($url);
 
   videoPlayer.on("ready", function () {
     // Logo KYNLIP
-    const iconPath = "/home/embed/kynliplogo.png";
+    const iconPath = "/kynliplogo.png";
     const tooltipText = "KPhim";
     videoPlayer.addButton(iconPath, tooltipText);
 
