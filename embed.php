@@ -3,7 +3,7 @@ $url = $_GET['url'] ?? '';
 if (!$url || !filter_var($url, FILTER_VALIDATE_URL)) {
     exit('Thiếu hoặc sai URL m3u8');
 }
-$proxy = '/proxy.php?url=' . urlencode($url);
+$proxy = 'https://kynlip.onrender.com/proxy.php?url=' . urlencode($url);
 ?>
 <!DOCTYPE html>
 <html lang="vi-VN">
