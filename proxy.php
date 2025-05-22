@@ -89,10 +89,17 @@ foreach ($lines as $line) {
 $parsed = parse_url($url);
 $tsBase = dirname($parsed['scheme'] . '://' . $parsed['host'] . $parsed['path']);
 
-// ✅ Sửa lỗi //proxy.php (nếu deploy ở thư mục gốc)
-$dir = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
-$self = ($_SERVER['HTTPS'] ?? 'off') !== 'off' ? 'https' : 'http';
-$self .= '://' . $_SERVER['HTTP_HOST'] . ($dir ? $dir : '') . '/proxy.php';
+// ✅ Fix lỗi // và Mixed Content (http → https)
+$https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+      || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
+
+$self = $https ? 'https://' : 'http://';
+$self .= $_SERVER['HTTP_HOST'];
+
+$scriptDir = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'])), '/');
+if ($scriptDir !== '') $self .= $scriptDir;
+
+$self .= '/proxy.php';
 
 foreach ($filtered as &$line) {
     if (preg_match('/\.ts$/', $line)) {
