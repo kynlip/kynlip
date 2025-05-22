@@ -14,10 +14,10 @@ $proxy = '/proxy.php?url=' . urlencode($url);
   <meta http-equiv="X-UA-Compatible" content="IE=9"/>
   <link rel="shortcut icon" href="https://www.google.com/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/home/embed/js/netflix.css"/>
-  <script src="/home/embed/js/jquery.min.js"></script>
-  <script src="/home/embed/js/jwplayer.js"></script>
-  <script src="/home/embed/js/devtools.js"></script>
+  <link rel="stylesheet" href="/netflix.css"/>
+  <script src="/jquery.min.js"></script>
+  <script src="/jwplayer.js"></script>
+  <script src="/devtools.js"></script>
   <style>
     html, body {
       margin: 0;
